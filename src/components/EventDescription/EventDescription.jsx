@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
 import { Description } from "components/Description/Description"
+import { Board } from './EventDescription.styled'
 
 export const EventDescription = ({ events }) => {
-  return (<div>
+  return <Board>
     {events.map(({ username, tag, location, avatar }) => (
       <Description
         username={username}
@@ -11,12 +12,12 @@ export const EventDescription = ({ events }) => {
         avatar={avatar}
       />
     ))}
-  </div>)
+  </Board>
 }
 
 EventDescription.propTypes = {
     events: PropTypes.arrayOf(
-        PropTypes.exact({
+        PropTypes.shape({
             username: PropTypes.string.isRequired,
             location: PropTypes.string.isRequired,
             tag: PropTypes.string.isRequired,

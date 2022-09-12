@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-export const Description = ({ username, tag, location, avatar, stats }) => {
+export const Description = ({ username, tag, location, avatar }) => {
   return (
   <div class="description">
     <img
