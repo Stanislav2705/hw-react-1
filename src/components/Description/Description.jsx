@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
+import { ListItems,List,DataName,Data, InfoContainer } from './Description.styled';
 
 export const Description = ({ username, tag, location, avatar,followers,views,likes }) => {
   return (
-  <div class="description">
+  <InfoContainer>
     <img
       src={avatar}
       alt="User avatar"
@@ -10,25 +11,25 @@ export const Description = ({ username, tag, location, avatar,followers,views,li
       width="250"
        height="300"
     />
-    <p class="name">{username}</p>
-    <p class="tag">{tag}</p>
-    <p class="location">{location}</p>
+    <Data>{username}</Data>
+    <DataName>&#64;{tag}</DataName>
+    <DataName>{location}</DataName>
 
-    <ul class="stats">
-    <li>
+    <List>
+    <ListItems>
       <span class="label">Followers</span>
       <span class="quantity">{followers}</span>
-    </li>
-    <li>
+    </ListItems>
+    <ListItems>
       <span class="label">Views</span>
       <span class="quantity">{views}</span>
-    </li>
-    <li>
+    </ListItems>
+    <ListItems>
       <span class="label">Likes</span>
       <span class="quantity">{likes}</span>
-    </li>
-    </ul>
-  </div>
+    </ListItems>
+    </List>
+  </InfoContainer>
   );
 }
 
